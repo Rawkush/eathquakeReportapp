@@ -1,5 +1,9 @@
 package com.example.ankush.eathquakereportapp;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class QueryUtils {
@@ -26,6 +30,30 @@ public class QueryUtils {
 
         //TODO: extracting the required data
 
+        try {
+            JSONObject baseResponse= new JSONObject(SAMPLE_JSON_RESPONSE);
+
+            JSONArray earthquakeArray = baseResponse.getJSONArray("features");
+
+            for(int i=0; i<earthquakeArray.length();i++){
+
+                JSONObject currentEathquake= earthquakeArray.getJSONObject(i);
+                JSONObject properties = currentEathquake.getJSONObject("properties");
+                String magnitude= properties.getString("mag");
+                String location= properties.getString("place");
+                String date=properties.getString("time");
+
+                EarthquakeData earthquak= new EarthquakeData(location,magnitude,date);
+
+                earthquakeData.add(earthquak);
+
+            }
+
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+        }
 
         return earthquakeData;
     }
