@@ -42,9 +42,8 @@ public class EarthquakeAdapter extends ArrayAdapter {
         date.setText(currentEarthquake.getDate());
 
 
+        return listItemView;
 
 
-
-        return super.getView(position, convertView, parent);
     }
 }
