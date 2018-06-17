@@ -4,16 +4,16 @@ public class EarthquakeData {
 
     private String mLocation;
     private String mMagnitude;
-    private String mDate;
+    private long timeInMilliSeconds;
 
-    EarthquakeData(String Location, String Magnitude, String date){
+    EarthquakeData(String Location, String Magnitude, long timeInMilliSeconds){
         mLocation=Location;
         mMagnitude=Magnitude;
-        mDate=date;
+        this.timeInMilliSeconds=timeInMilliSeconds;
     }
 
-    public String getDate(){
-        return mDate;
+    public long getTimeInMilliSeconds(){
+        return timeInMilliSeconds;
     }
 
     public String getLocation() {
