@@ -2,6 +2,8 @@ package com.example.ankush.eathquakereportapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -22,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         earthquakes.add("Rio de Janeiro");
         earthquakes.add("Paris");
 
-
+        ListView earthquakeListView= (ListView) findViewById(R.id.list);
+        ArrayAdapter<String> adapter= new ArrayAdapter<String >( this, android.R.layout.simple_list_item_1, earthquakes);
+        earthquakeListView.setAdapter(adapter);
 
     }
 }
