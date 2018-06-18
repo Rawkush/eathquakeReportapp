@@ -76,4 +76,8 @@ public class EarthquakeAdapter extends ArrayAdapter {
     }
 
 
+
+
+
+
 }

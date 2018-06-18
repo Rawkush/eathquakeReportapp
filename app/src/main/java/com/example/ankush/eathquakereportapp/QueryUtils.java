@@ -154,4 +154,6 @@ public class QueryUtils {
         return earthquakeData;
     }
 
+
+
 }
