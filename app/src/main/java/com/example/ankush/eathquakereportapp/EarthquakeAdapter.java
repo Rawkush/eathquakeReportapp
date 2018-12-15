@@ -36,14 +36,14 @@ public class EarthquakeAdapter extends ArrayAdapter {
         EarthquakeData currentEarthquake = data.get(position);
 
         TextView magnitudeView = (TextView) listItemView.findViewById(R.id.magnitude);
-        magnitudeView.setText(currentEarthquake.getMagnitude());
+        magnitudeView.setText(""+currentEarthquake.getMagnitude());
 
         TextView Location = (TextView) listItemView.findViewById(R.id.location);
         Location.setText(currentEarthquake.getLocation());
 
         TextView date = (TextView) listItemView.findViewById(R.id.date);
 
-        Date dateObject = new Date(currentEarthquake.getTimeInMilliSeconds());
+        Date dateObject = new Date(currentEarthquake.getTimeInMilliseconds());
         String formattedTime = formatTime(dateObject);
 
         date.setText(formattedTime);
