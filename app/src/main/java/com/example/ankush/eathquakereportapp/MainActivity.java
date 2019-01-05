@@ -30,20 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         //using temp dummy data
 
-        ArrayList<EarthquakeData> earthquakes= new ArrayList<>();
 
         mAdapter = new EarthquakeAdapter(this, new ArrayList<EarthquakeData>());
-
-
         ListView earthquakeListView= (ListView) findViewById(R.id.list);
      //   ArrayAdapter<String> adapter= new ArrayAdapter<String >( this, android.R.layout.simple_list_item_1, earthquakes);
-        EarthquakeAsyncTask task = new EarthquakeAsyncTask();
-        task.execute(USGS_REQUEST_URL);
 
         earthquakeListView.setAdapter(mAdapter);
-
-
-
+        EarthquakeAsyncTask task = new EarthquakeAsyncTask();
+        task.execute(USGS_REQUEST_URL);
     }
 
 
